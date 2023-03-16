@@ -44,7 +44,7 @@ public class EnemyScript : MonoBehaviour
         }
         if (Vector3.Distance(transform.position, goList[3].transform.position) <= 0.1)
         {
-            Destroy(gameObject);
+            Destroy(transform.parent.gameObject);
             base_system.health -= health;
         }
 
