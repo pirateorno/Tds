@@ -47,6 +47,10 @@ public class EnemyScript : MonoBehaviour
             Destroy(transform.parent.gameObject);
             base_system.health -= health;
         }
+        if (health<=0)
+        {
+            Destroy(transform.parent.gameObject);
+        }
 
         transform.position = Vector3.MoveTowards(transform.position, goList[paths_dot].transform.position, speed * Time.deltaTime);
     }

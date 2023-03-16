@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7368879206945908312}
   m_Layer: 6
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -121,6 +121,7 @@ MonoBehaviour:
   speed: 2
   health: 2
   paths_dot: 0
+  script_service: {fileID: 0}
   base_system: {fileID: 0}
   goList:
   - {fileID: 0}
