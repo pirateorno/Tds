@@ -18,8 +18,10 @@ public class EnemySpawn : MonoBehaviour
 
     void Start()
     {
-        StartCoroutine(SummonEnemy(0, 3));
-        StartCoroutine(SummonEnemy(1, 2));
+        StartCoroutine(SummonEnemy(0, 1));
+        StartCoroutine(SummonEnemy(1, 1));
         StartCoroutine(SummonEnemy(2, 1));
+        StartCoroutine(SummonEnemy(3, 1));
+        StartCoroutine(SummonEnemy(4, 1));
     }
 }
