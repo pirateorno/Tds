@@ -673,8 +673,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
-  cooldown: 0
-  closestObject: {fileID: 0}
+  fireRate: 1
   searchRadius: 5
 --- !u!1 &705507993
 GameObject:

@@ -4,18 +4,21 @@ public class TowerScript : MonoBehaviour
 {
     [Header("Settings")]
     public int damage;
-    public int cooldown;
+    public int fireRate; // задержка выстрела в секундах
+    public int searchRadius;
 
-    public GameObject closestObject;
+    private GameObject closestObject;
 
-    public float searchRadius = 10f;
+    void Start()
+    {
+        InvokeRepeating("MakeDamage", 0f, fireRate); // вызываем MakeDamage каждые fireRate секунд, начиная сразу же
+    }
 
     void Update()
     {
         Collider[] colliders = Physics.OverlapSphere(transform.position, searchRadius);
 
         float closestDistance = Mathf.Infinity;
-        GameObject closestObject = null;
 
         foreach (Collider collider in colliders)
         {
@@ -28,7 +31,10 @@ public class TowerScript : MonoBehaviour
                 closestObject = collider.gameObject;
             }
         }
+    }
 
+    void MakeDamage()
+    {
         if (closestObject != null)
         {
             closestObject.GetComponent<EnemyScript>().health -= damage;
