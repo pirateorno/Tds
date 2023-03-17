@@ -7,6 +7,12 @@ public class EnemySpawn : MonoBehaviour
     public List<GameObject> enemies;
     public Transform spawn;
 
+    [Header("Settings")]
+    public int waves_count;
+    public int multiplier;
+    public int current_wave;
+
+
     IEnumerator SummonEnemy(int id, int amount)
     {
         for (int i = 0; i < amount; i++)
@@ -18,10 +24,13 @@ public class EnemySpawn : MonoBehaviour
 
     void Start()
     {
-        StartCoroutine(SummonEnemy(0, 1));
-        StartCoroutine(SummonEnemy(1, 1));
-        StartCoroutine(SummonEnemy(2, 1));
-        StartCoroutine(SummonEnemy(3, 1));
-        StartCoroutine(SummonEnemy(4, 1));
+        for (current_wave = 0; current_wave < waves_count; current_wave++)
+        {
+
+
+
+        }
     }
+
+    //StartCoroutine(SummonEnemy(0, 10));
 }

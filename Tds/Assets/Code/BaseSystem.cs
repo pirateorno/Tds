@@ -7,11 +7,11 @@ public class BaseSystem : MonoBehaviour
 {
     public int health;
     public Text health_text;
-    public Text info_text;
+    public InfoSystem info;
 
     void Start()
     {
-        info_text.gameObject.SetActive(false);
+        
     }
 
     void Update()
@@ -19,7 +19,7 @@ public class BaseSystem : MonoBehaviour
         health_text.text = "Health: " + health.ToString();
         if (health <= 0)
         {
-            info_text.gameObject.SetActive(true);
+            info.DisplayMessage("Game Over!");
         }
     }
 }
