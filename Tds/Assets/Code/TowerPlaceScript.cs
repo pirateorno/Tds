@@ -16,6 +16,7 @@ public class TowerPlaceScript : MonoBehaviour
     [SerializeField] private GameObject current_placeholder;
     [SerializeField] private GameObject current_range;
     public GameObject range_placeholder;
+    public bool canPlace;
 
     void Start()
     {
@@ -28,10 +29,18 @@ public class TowerPlaceScript : MonoBehaviour
 
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
-        if (Physics.Raycast(ray, out hit, Mathf.Infinity, ~layerMask)) // передача маски слоя в параметр layerMask
+        if (Physics.Raycast(ray, out hit, Mathf.Infinity, ~layerMask))
         {
+            if (hit.collider.tag == "Grass")
+            {
+                canPlace= true;
+            } else
+            {
+                canPlace= false;
+            }
             cursorPosition = hit.point;
         }
+
 
         if (current_placeholder != null)
         {
@@ -40,7 +49,7 @@ public class TowerPlaceScript : MonoBehaviour
             current_range.transform.localScale = new Vector3(10, 1,10);
         }
 
-        if (Input.GetButtonDown("Fire1") && current_placeholder != null)
+        if (Input.GetButtonDown("Fire1") && current_placeholder != null && canPlace == true)
         {
             CreateTower();
         }
