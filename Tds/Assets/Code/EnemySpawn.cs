@@ -12,6 +12,21 @@ public class EnemySpawn : MonoBehaviour
     public int multiplier;
     public int current_wave;
 
+    void Start()
+    {
+        StartCoroutine(SpawnWaves());
+    }
+
+    IEnumerator SpawnWaves()
+    {
+        for (current_wave = 0; current_wave < waves_count; current_wave++)
+        {
+            int amount = (current_wave + 1) * multiplier;
+            int enemy_id = Random.Range(0, enemies.Count);
+            yield return StartCoroutine(SummonEnemy(enemy_id, amount));
+            yield return StartCoroutine(WaitForNextWave(20f));
+        }
+    }
 
     IEnumerator SummonEnemy(int id, int amount)
     {
@@ -22,15 +37,8 @@ public class EnemySpawn : MonoBehaviour
         }
     }
 
-    void Start()
+    IEnumerator WaitForNextWave(float delay)
     {
-        for (current_wave = 0; current_wave < waves_count; current_wave++)
-        {
-
-
-
-        }
+        yield return new WaitForSeconds(delay);
     }
-
-    //StartCoroutine(SummonEnemy(0, 10));
 }
