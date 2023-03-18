@@ -6,7 +6,9 @@ using UnityEngine.UI;
 public class InfoSystem : MonoBehaviour
 {
     public Text info_text;
+    public Text wave_text;
     public EnemySpawn wave;
+
 
     void Start()
     {
@@ -27,9 +29,10 @@ public class InfoSystem : MonoBehaviour
 
     void Update()
     {
-        if (wave.current_wave >= 30)
+        wave_text.text = "Wave: " + wave.current_wave.ToString();
+        if (wave.current_wave > wave.waves_count)
         {
-            DisplayMessage("You won!!");
+            info_text.text = "You won!!";
         }
     }
 }

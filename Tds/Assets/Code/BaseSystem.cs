@@ -5,21 +5,16 @@ using UnityEngine.UI;
 
 public class BaseSystem : MonoBehaviour
 {
-    public int health;
-    public Text health_text;
-    public InfoSystem info;
-
-    void Start()
-    {
-        
-    }
+    public int health; // health
+    public Text health_text; // helth text
+    public InfoSystem info; // Info module
 
     void Update()
     {
-        health_text.text = "Health: " + health.ToString();
+        health_text.text = "Health: " + health.ToString(); // Updating health text
         if (health <= 0)
         {
-            info.DisplayMessage("Game Over!");
+            info.DisplayMessage("Game Over!"); //Displaying game over!
         }
     }
 }

@@ -3,15 +3,15 @@ using UnityEngine;
 public class TowerScript : MonoBehaviour
 {
     [Header("Settings")]
-    public int damage;
-    public int fireRate; // задержка выстрела в секундах
-    public int searchRadius;
+    public int damage; // tower damage
+    public int fireRate; // tower fire rate
+    public int searchRadius; // tower range
 
-    private GameObject closestObject;
+    private GameObject closestObject; // closest object (we find it in update function)
 
     void Start()
     {
-        InvokeRepeating("MakeDamage", 0f, fireRate); // вызываем MakeDamage каждые fireRate секунд, начиная сразу же
+        InvokeRepeating("MakeDamage", 0f, fireRate); // repeat function "MakeDamage" function every "fireRate" seconds
     }
 
     void Update()

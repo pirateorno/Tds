@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemySpawn : MonoBehaviour
 {
@@ -12,10 +13,23 @@ public class EnemySpawn : MonoBehaviour
     public int multiplier;
     public int current_wave;
 
+    [Header("Other")]
+    public Button skip_button; 
+    public bool skipWave;
+
+
     void Start()
     {
         StartCoroutine(SpawnWaves());
+        skip_button.onClick.AddListener(OnClick);
     }
+
+    public void OnClick()
+    {
+        skipWave = true;
+        print("Skip wave");
+    }
+
 
     IEnumerator SpawnWaves()
     {
@@ -39,6 +53,24 @@ public class EnemySpawn : MonoBehaviour
 
     IEnumerator WaitForNextWave(float delay)
     {
-        yield return new WaitForSeconds(delay);
+        float timeLeft = delay;
+        if(current_wave < waves_count)
+        {
+            while (timeLeft > 0f)
+            {
+                if (skipWave)
+                {
+                    skipWave = false;
+                    yield break;
+                }
+
+                yield return null;
+                timeLeft -= Time.deltaTime;
+            }
+        } else
+        {
+
+        }
     }
+
 }
