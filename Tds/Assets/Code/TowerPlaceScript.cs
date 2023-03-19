@@ -84,11 +84,11 @@ public class TowerPlaceScript : MonoBehaviour
                 money_system.money -= 150;
                 tower_id = id;
             }
-            if (id == 2 && money_system.money >= 100)
+            if (id == 2 && money_system.money >= 200)
             {
                 current_placeholder = Instantiate(tower_placeholder, cursorPosition, gameObject.transform.rotation);
                 current_range = Instantiate(range_placeholder, cursorPosition, gameObject.transform.rotation);
-                money_system.money -= 100;
+                money_system.money -= 200;
                 tower_id = id;
             }
         }

@@ -39,6 +39,13 @@ public class TowerScript : MonoBehaviour
         if (closestObject != null)
         {
             closestObject.GetComponent<EnemyScript>().health -= damage;
+
+            // Получаем направление на ближайший объект, ограничивая его только по оси Y
+            Vector3 direction = new Vector3(closestObject.transform.position.x - transform.position.x, 0f, closestObject.transform.position.z - transform.position.z);
+
+            // Поворачиваем башню в заданном направлении
+            transform.rotation = Quaternion.LookRotation(direction, Vector3.up);
         }
     }
+
 }
