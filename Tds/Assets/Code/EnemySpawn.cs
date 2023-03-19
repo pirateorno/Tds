@@ -27,7 +27,6 @@ public class EnemySpawn : MonoBehaviour
     public void OnClick()
     {
         skipWave = true;
-        print("Skip wave");
     }
 
 

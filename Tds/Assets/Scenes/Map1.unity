@@ -439,7 +439,7 @@ GameObject:
   - component: {fileID: 247395274}
   - component: {fileID: 247395273}
   m_Layer: 5
-  m_Name: Classic tower (1)
+  m_Name: Sniper tower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1653,7 +1653,7 @@ GameObject:
   - component: {fileID: 1014483307}
   - component: {fileID: 1014483306}
   m_Layer: 5
-  m_Name: Classic tower (2)
+  m_Name: Minigunner tower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3111,10 +3111,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cursorPosition: {x: 0, y: 0, z: 0}
   classic_tower_button: {fileID: 1753560300}
-  classic_tower: {fileID: 243400824629626737, guid: dda101704b79b7d4ea65ff97df0a0084, type: 3}
-  classic_tower_placeholder: {fileID: 243400824629626737, guid: 5b5dfb0d6595d4e4daa6cde9b9998499, type: 3}
+  sniper_tower_button: {fileID: 247395273}
+  minigunner_tower_button: {fileID: 1014483306}
+  towers:
+  - {fileID: 243400824629626737, guid: dda101704b79b7d4ea65ff97df0a0084, type: 3}
+  - {fileID: 243400824629626737, guid: bffcb3538f095ee4684bf7356afb46fb, type: 3}
+  - {fileID: 243400824629626737, guid: c2ed2f54646234f49bd30bcaf1c9075a, type: 3}
   range_placeholder: {fileID: 1487836624028192018, guid: b655998fa6c7a9f4f9473b3f94715e12, type: 3}
   money_system: {fileID: 2023915548}
+  tower_placeholder: {fileID: 243400824629626737, guid: 5b5dfb0d6595d4e4daa6cde9b9998499, type: 3}
 --- !u!114 &2023915548
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3127,5 +3132,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf80d673060c2be4194e816af65e2cad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  money: 100
+  money: 10000
   money_text: {fileID: 1322394823}
