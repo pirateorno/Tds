@@ -32,7 +32,7 @@ public class InfoSystem : MonoBehaviour
     void Update()
     {
         wave_text.text = "Wave: " + wave.current_wave.ToString();
-        if (wave.current_wave > wave.waves_count)
+        if (wave.current_wave == wave.waves_count)
         {
             info_text.text = "You won!!";
         }
