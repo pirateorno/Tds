@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class BaseSystem : MonoBehaviour
 {
-    public int health; // health
+    public float health; // health
     public Text health_text; // helth text
     public InfoSystem info; // Info module
 

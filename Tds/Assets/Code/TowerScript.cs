@@ -3,9 +3,9 @@ using UnityEngine;
 public class TowerScript : MonoBehaviour
 {
     [Header("Settings")]
-    public int damage; // tower damage
-    public int fireRate; // tower fire rate
-    public int searchRadius; // tower range
+    public float damage; // tower damage
+    public float fireRate; // tower fire rate
+    public float searchRadius; // tower range
 
     private GameObject closestObject; // closest object (we find it in update function)
 

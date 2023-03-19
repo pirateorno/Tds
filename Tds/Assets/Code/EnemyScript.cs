@@ -6,7 +6,7 @@ public class EnemyScript : MonoBehaviour
 {
     [Header("Settings")]
     public int speed;
-    public int health;
+    public float health;
     public int kill_money;
 
     [Header("Other")]
