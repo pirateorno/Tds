@@ -119,12 +119,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
-  health: 150
-  kill_money: 25
+  health: 200
+  kill_money: 40
   paths_dot: 0
   script_service: {fileID: 0}
   base_system: {fileID: 0}
+  money_system: {fileID: 0}
   goList:
+  - {fileID: 0}
+  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}

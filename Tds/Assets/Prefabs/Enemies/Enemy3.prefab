@@ -118,13 +118,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2589b7635db737e4983ee7ed677c1e9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
-  health: 40
-  kill_money: 8
+  speed: 5
+  health: 30
+  kill_money: 7
   paths_dot: 0
   script_service: {fileID: 0}
   base_system: {fileID: 0}
+  money_system: {fileID: 0}
   goList:
+  - {fileID: 0}
+  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}

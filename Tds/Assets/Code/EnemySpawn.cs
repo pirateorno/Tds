@@ -67,10 +67,6 @@ public class EnemySpawn : MonoBehaviour
                 yield return null;
                 timeLeft -= Time.deltaTime;
             }
-        } else
-        {
-
         }
     }
-
 }

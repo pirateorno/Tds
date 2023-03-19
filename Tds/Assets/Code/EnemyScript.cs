@@ -26,6 +26,8 @@ public class EnemyScript : MonoBehaviour
         goList[1] = GameObject.Find("2");
         goList[2] = GameObject.Find("3");
         goList[3] = GameObject.Find("4");
+        goList[4] = GameObject.Find("5");
+        goList[5] = GameObject.Find("6");
         script_service = GameObject.Find("SCRIPTSERVICE");
         base_system = script_service.GetComponent<BaseSystem>();
         money_system = script_service.GetComponent<MoneySystem>();
@@ -46,6 +48,14 @@ public class EnemyScript : MonoBehaviour
             paths_dot = 3;
         }
         if (Vector3.Distance(transform.position, goList[3].transform.position) <= 0.1)
+        {
+            paths_dot = 4;
+        }
+        if (Vector3.Distance(transform.position, goList[4].transform.position) <= 0.1)
+        {
+            paths_dot = 5;
+        }
+        if (Vector3.Distance(transform.position, goList[5].transform.position) <= 0.1)
         {
             Destroy(transform.parent.gameObject);
             base_system.health -= health;

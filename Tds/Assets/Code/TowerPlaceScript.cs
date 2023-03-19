@@ -13,15 +13,16 @@ public class TowerPlaceScript : MonoBehaviour
     public GameObject classic_tower;
     public GameObject classic_tower_placeholder;
     [Header("Other")]
-    [SerializeField] private GameObject current_placeholder;
-    [SerializeField] private GameObject current_range;
+    private GameObject current_placeholder;
+    private GameObject current_range;
+    private bool canPlace;
     public GameObject range_placeholder;
-    public bool canPlace;
     public MoneySystem money_system;
+    
 
     void Start()
     {
-        classic_tower_button.onClick.AddListener(PlaceholderClassicTower);
+        classic_tower_button.onClick.AddListener(PlaceholderClassicTower1);
     }
 
     void Update()
@@ -47,7 +48,7 @@ public class TowerPlaceScript : MonoBehaviour
         {
             current_placeholder.transform.position = new Vector3(cursorPosition.x, cursorPosition.y + gameObject.transform.localScale.y /2, cursorPosition.z);
             current_range.transform.position = new Vector3(cursorPosition.x, cursorPosition.y, cursorPosition.z);
-            current_range.transform.localScale = new Vector3(10, 1,10);
+            current_range.transform.localScale = new Vector3(10, 1, 10);
         }
 
         if (Input.GetButtonDown("Fire1") && current_placeholder != null && canPlace == true)
@@ -57,13 +58,13 @@ public class TowerPlaceScript : MonoBehaviour
     }
 
 
-    void PlaceholderClassicTower()
+    void PlaceholderClassicTower1()
     {
-        if (current_placeholder == null && money_system.money >= 1)
+        if (current_placeholder == null && money_system.money >= 50)
         {
             current_placeholder = Instantiate(classic_tower_placeholder, cursorPosition, gameObject.transform.rotation);
             current_range = Instantiate(range_placeholder, cursorPosition, gameObject.transform.rotation);
-            money_system.money -= 1;
+            money_system.money -= 50;
         }
     }
 

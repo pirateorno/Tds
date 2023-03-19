@@ -12,6 +12,7 @@ public class TowerScript : MonoBehaviour
     void Start()
     {
         InvokeRepeating("MakeDamage", 0f, fireRate); // repeat function "MakeDamage" function every "fireRate" seconds
+
     }
 
     void Update()

@@ -153,5 +153,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 15
-  fireRate: 1
+  fireRate: 2
   searchRadius: 5
