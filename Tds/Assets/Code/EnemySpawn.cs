@@ -36,10 +36,6 @@ public class EnemySpawn : MonoBehaviour
         {
 
             yield return StartCoroutine(SummonEnemy(0, 2 * current_wave));
-
-            //int amount = (current_wave + 1) * multiplier;
-            //int enemy_id = Random.Range(0, enemies.Count);
-            //yield return StartCoroutine(SummonEnemy(enemy_id, amount));
             yield return StartCoroutine(WaitForNextWave(20f));
         }
     }
