@@ -12,9 +12,5 @@ public class BaseSystem : MonoBehaviour
     void Update()
     {
         health_text.text = "Health: " + health.ToString(); // Updating health text
-        if (health <= 0)
-        {
-            info.DisplayMessage("Game Over!"); //Displaying game over!
-        }
     }
 }

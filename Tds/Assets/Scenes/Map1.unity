@@ -2774,6 +2774,7 @@ MonoBehaviour:
   info_text: {fileID: 244551652}
   wave_text: {fileID: 1002347523}
   wave: {fileID: 2023915544}
+  bases: {fileID: 2023915545}
 --- !u!114 &2023915547
 MonoBehaviour:
   m_ObjectHideFlags: 0
