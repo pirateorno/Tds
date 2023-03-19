@@ -12,6 +12,7 @@ public class EnemySpawn : MonoBehaviour
     public int waves_count;
     public int multiplier;
     public int current_wave;
+    public int wave_wait;
 
     [Header("Other")]
     public Button skip_button; 
@@ -36,7 +37,7 @@ public class EnemySpawn : MonoBehaviour
         {
 
             yield return StartCoroutine(SummonEnemy(0, 2 * current_wave));
-            yield return StartCoroutine(WaitForNextWave(20f));
+            yield return StartCoroutine(WaitForNextWave(wave_wait));
         }
     }
 
