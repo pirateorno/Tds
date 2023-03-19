@@ -17,6 +17,7 @@ public class TowerPlaceScript : MonoBehaviour
     [SerializeField] private GameObject current_range;
     public GameObject range_placeholder;
     public bool canPlace;
+    public MoneySystem money_system;
 
     void Start()
     {
@@ -58,8 +59,12 @@ public class TowerPlaceScript : MonoBehaviour
 
     void PlaceholderClassicTower()
     {
-        current_placeholder = Instantiate(classic_tower_placeholder, cursorPosition, gameObject.transform.rotation);
-        current_range = Instantiate(range_placeholder, cursorPosition, gameObject.transform.rotation);
+        if (current_placeholder == null && money_system.money >= 1)
+        {
+            current_placeholder = Instantiate(classic_tower_placeholder, cursorPosition, gameObject.transform.rotation);
+            current_range = Instantiate(range_placeholder, cursorPosition, gameObject.transform.rotation);
+            money_system.money -= 1;
+        }
     }
 
     void CreateTower()

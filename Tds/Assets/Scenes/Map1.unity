@@ -5508,6 +5508,7 @@ MonoBehaviour:
   current_range: {fileID: 1487836624028192018, guid: b655998fa6c7a9f4f9473b3f94715e12, type: 3}
   range_placeholder: {fileID: 1487836624028192018, guid: b655998fa6c7a9f4f9473b3f94715e12, type: 3}
   canPlace: 0
+  money_system: {fileID: 2023915548}
 --- !u!114 &2023915548
 MonoBehaviour:
   m_ObjectHideFlags: 0

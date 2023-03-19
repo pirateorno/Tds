@@ -13,6 +13,7 @@ public class EnemyScript : MonoBehaviour
     public int paths_dot;
     public GameObject script_service;
     public BaseSystem base_system;
+    public MoneySystem money_system;
 
     [Header("Paths")]
     public List<GameObject> goList;
@@ -27,6 +28,7 @@ public class EnemyScript : MonoBehaviour
         goList[3] = GameObject.Find("4");
         script_service = GameObject.Find("SCRIPTSERVICE");
         base_system = script_service.GetComponent<BaseSystem>();
+        money_system = script_service.GetComponent<MoneySystem>();
     }
 
     void Update()
@@ -51,6 +53,7 @@ public class EnemyScript : MonoBehaviour
         if (health<=0)
         {
             Destroy(transform.parent.gameObject);
+            money_system.money += kill_money;
         }
 
         transform.position = Vector3.MoveTowards(transform.position, goList[paths_dot].transform.position, speed * Time.deltaTime);
