@@ -355,9 +355,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d450137cb4a01874cae9b7e07c5c9fa4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 15
-  fireRate: 2
-  searchRadius: 5
+  damage: 25
+  fireRate: 5
+  searchRadius: 15
 --- !u!1 &5505641337958478973
 GameObject:
   m_ObjectHideFlags: 0

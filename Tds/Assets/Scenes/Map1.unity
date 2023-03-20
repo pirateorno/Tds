@@ -2737,6 +2737,7 @@ MonoBehaviour:
   - {fileID: 2364772496643514250, guid: 05d14f2521b289249b70273772d97ae9, type: 3}
   - {fileID: 2364772496643514250, guid: 5b85e50da36622b4faaf569cb552215e, type: 3}
   - {fileID: 2364772496643514250, guid: b04a466ac001c3f4e9aececf4574da92, type: 3}
+  - {fileID: 2364772496643514250, guid: 656054fe0db6abf458789ef6f453f987, type: 3}
   spawn: {fileID: 301389964}
   waves_count: 30
   multiplier: 1

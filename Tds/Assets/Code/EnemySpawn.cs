@@ -35,8 +35,35 @@ public class EnemySpawn : MonoBehaviour
     {
         for (current_wave = 0; current_wave < waves_count; current_wave++)
         {
+            yield return StartCoroutine(SummonEnemy(0, 3 / 2 * current_wave));
+            if (current_wave >= 0 && current_wave < 10)
+            {
+                yield return StartCoroutine(SummonEnemy(1, 3 / 2 * current_wave));
+            }
+            if (current_wave >= 10  && current_wave < 20)
+            {
+                yield return StartCoroutine(SummonEnemy(0, 3 / 2 * current_wave));
+                yield return StartCoroutine(SummonEnemy(1, 3 / 2 * current_wave));
+                yield return StartCoroutine(SummonEnemy(2, 3 / 2 * current_wave));
+            }
+            if (current_wave >= 20 && current_wave < 30)
+            {
+                yield return StartCoroutine(SummonEnemy(0, 3 / 2 * current_wave));
+                yield return StartCoroutine(SummonEnemy(1, 3 / 2 * current_wave));
+                yield return StartCoroutine(SummonEnemy(2, 3 / 2 * current_wave));
+                yield return StartCoroutine(SummonEnemy(3, 3 / 2 * current_wave));
+                yield return StartCoroutine(SummonEnemy(4, 3 / 2 * current_wave));
+            }
+            if (current_wave == 30)
+            {
+                yield return StartCoroutine(SummonEnemy(0, 5)); 
+                yield return StartCoroutine(SummonEnemy(1, 5)); 
+                yield return StartCoroutine(SummonEnemy(2, 5)); 
+                yield return StartCoroutine(SummonEnemy(3, 5)); 
+                yield return StartCoroutine(SummonEnemy(4, 5)); 
+                yield return StartCoroutine(SummonEnemy(5, 1));
+            }
 
-            yield return StartCoroutine(SummonEnemy(0, 2 * current_wave));
             yield return StartCoroutine(WaitForNextWave(wave_wait));
         }
     }
@@ -45,7 +72,7 @@ public class EnemySpawn : MonoBehaviour
     {
         for (int i = 0; i < amount; i++)
         {
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(0.5f);
             Instantiate(enemies[id], spawn.position, spawn.rotation);
         }
     }
