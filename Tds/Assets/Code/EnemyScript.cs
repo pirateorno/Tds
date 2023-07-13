@@ -58,14 +58,19 @@ public class EnemyScript : MonoBehaviour
         if (Vector3.Distance(transform.position, goList[5].transform.position) <= 0.1)
         {
             Destroy(transform.parent.gameObject);
-            base_system.health -= health;
+            if (base_system)
+            {
+                base_system.health -= health;
+            }
         }
         if (health<=0)
         {
             Destroy(transform.parent.gameObject);
-            money_system.money += kill_money;
+            if (money_system)
+            {
+                money_system.money += kill_money;
+            }
         }
-
         transform.position = Vector3.MoveTowards(transform.position, goList[paths_dot].transform.position, speed * Time.deltaTime);
     }
 }

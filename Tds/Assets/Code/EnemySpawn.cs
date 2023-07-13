@@ -22,7 +22,10 @@ public class EnemySpawn : MonoBehaviour
     void Start()
     {
         StartCoroutine(SpawnWaves());
-        skip_button.onClick.AddListener(OnClick);
+        if (skip_button)
+        {
+            skip_button.onClick.AddListener(OnClick);
+        }
     }
 
     public void OnClick()

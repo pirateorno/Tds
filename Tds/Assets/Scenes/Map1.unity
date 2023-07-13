@@ -1068,7 +1068,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Classic
+  m_Text: 'Classic
+
+    (50)'
 --- !u!222 &309626224
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4054,7 +4056,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Sniper
+  m_Text: 'Sniper
+
+    (150)'
 --- !u!222 &1157203599
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4814,7 +4818,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Minigunner
+  m_Text: 'Minigunner
+
+    (200)'
 --- !u!222 &1431865645
 CanvasRenderer:
   m_ObjectHideFlags: 0
