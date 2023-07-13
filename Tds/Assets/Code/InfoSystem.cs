@@ -14,12 +14,12 @@ public class InfoSystem : MonoBehaviour
 
     void Start()
     {
-        DisplayMessage("");
+        DisplayMessage("", 1f);
     }
 
-    public void DisplayMessage(string message)
+    public void DisplayMessage(string message, float HowManyToWait)
     {
-        StartCoroutine(ShowMessage(message, 3f));
+        StartCoroutine(ShowMessage(message, HowManyToWait));
     }
 
     IEnumerator ShowMessage(string message, float delay)

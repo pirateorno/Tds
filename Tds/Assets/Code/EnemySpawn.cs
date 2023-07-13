@@ -17,6 +17,7 @@ public class EnemySpawn : MonoBehaviour
     [Header("Other")]
     public Button skip_button; 
     public bool skipWave;
+    public InfoSystem info;
 
 
     void Start()
@@ -83,19 +84,26 @@ public class EnemySpawn : MonoBehaviour
     IEnumerator WaitForNextWave(float delay)
     {
         float timeLeft = delay;
-        if(current_wave < waves_count)
+        if (current_wave < waves_count)
         {
             while (timeLeft > 0f)
             {
                 if (skipWave)
                 {
                     skipWave = false;
+                    info.DisplayMessage("New wave is starting!", 3f);
                     yield break;
                 }
+                if (info)
+                {
+                    info.DisplayMessage("New wave starting in " + Mathf.RoundToInt(timeLeft).ToString() + " seconds", 0.1f);
 
-                yield return null;
-                timeLeft -= Time.deltaTime;
+                }
+                yield return new WaitForSeconds(0.1f);
+
+                timeLeft -= 0.1f;
             }
         }
     }
+
 }
